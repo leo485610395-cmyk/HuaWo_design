@@ -1,7 +1,7 @@
 # huawo / 化我 Design System
 
-> Editorial Magazine × Parametric Engineering
-> 大学生 AI 产品经理的个人品牌视觉系统,以 `DESIGN.md` 形式存在,可被 AI Agent 直接消费。
+> 
+> 
 
 ---
 
@@ -93,4 +93,4 @@ MIT——你可以 fork、改写、商用、自托管。
 
 - **Open Design** — https://github.com/nexu-io/open-design
 - **DESIGN.md 完整手册** — 见同仓库 `manual.md`(把网站变成 design.md 的实操手册)
-- **作者**:huawo / 化我 · 浪尖领航官
+- **作者**:huawo / 化我 ·
