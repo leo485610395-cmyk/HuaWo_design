@@ -1,0 +1,14 @@
+# 临时/构建产物
+.tmp/
+node_modules/
+*.log
+
+# HyperFrames 渲染产物（只保留 samples/ 下的样本）
+renders/
+.cache/
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

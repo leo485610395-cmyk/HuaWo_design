@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        /* 暖白主背景 #F5F4F0 — DESIGN.md §2 Primary */
+        background: #F5F4F0;
+        color: #0E0E0E;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .mono {
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+      }
+      .display {
+        font-family: "Syne", sans-serif;
+      }
+      .serif {
+        font-family: "Bodoni Moda", Georgia, serif;
+      }
+
+      /* 顶部签名行 — DESIGN.md §5 */
+      .sig-bar {
+        position: absolute;
+        top: 56px;
+        left: 120px;
+        right: 120px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        letter-spacing: 0.09em;
+        color: #7A7A77;
+      }
+
+      /* 场景1: 品牌符号大字 */
+      #scene-mark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      .mark-glyph {
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        font-size: 320px;
+        line-height: 0.93;
+        letter-spacing: -0.025em;
+        color: #0E0E0E;
+      }
+      .mark-glyph .accent {
+        /* 暖金 #C5A880 — DESIGN.md §2 Accent */
+        color: #C5A880;
+      }
+      .mark-sub {
+        margin-top: 32px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 16px;
+        letter-spacing: 0.12em;
+        color: #7A7A77;
+        text-transform: uppercase;
+      }
+
+      /* 场景2: 哲学收尾 */
+      #scene-ethos {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 1200px;
+      }
+      .ethos-quote {
+        font-family: "Bodoni Moda", serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 88px;
+        line-height: 1.1;
+        color: #0E0E0E;
+      }
+      .ethos-quote .accent {
+        color: #C5A880;
+      }
+
+      /* 底部落款 */
+      #scene-signoff {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      .signoff-name {
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        font-size: 160px;
+        line-height: 0.93;
+        letter-spacing: -0.025em;
+        color: #0E0E0E;
+      }
+      .signoff-name .accent {
+        color: #C5A880;
+      }
+      .signoff-meta {
+        margin-top: 40px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 18px;
+        letter-spacing: 0.12em;
+        color: #7A7A77;
+      }
+
+      /* 底部参数行 — DESIGN.md §5 */
+      .param-bar {
+        position: absolute;
+        bottom: 56px;
+        left: 120px;
+        right: 120px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.09em;
+        color: #7A7A77;
+        text-transform: uppercase;
+      }
+
+      /* ✦ 品牌签名符号 */
+      .spark {
+        color: #C5A880;
+        margin: 0 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 组合根 -->
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="10"
+      data-width="1920"
+      data-height="1080"
+    >
+
+      <!-- 顶部签名行(全程显示) -->
+      <div class="sig-bar" id="sig-bar">
+        <span>HW / 化我<span class="spark">✦</span></span>
+        <span>№ 26 / WAVES PILOT / 浪尖领航官</span>
+      </div>
+
+      <!-- 场景1 (0-3.5s): 品牌符号 -->
+      <div id="scene-mark" class="clip" data-start="0" data-duration="3.5" data-track-index="1">
+        <div class="mark-glyph">化<span class="accent">我</span></div>
+        <div class="mark-sub">BREAK BOUNDS<span class="spark">✦</span>GROW IN TANGENT</div>
+      </div>
+
+      <!-- 场景2 (3.5-7s): 哲学收尾 -->
+      <div id="scene-ethos" class="clip" data-start="3.5" data-duration="3.5" data-track-index="1">
+        <div class="ethos-quote">人生是<span class="accent">配得感</span>的修行</div>
+      </div>
+
+      <!-- 场景3 (7-10s): 落款 -->
+      <div id="scene-signoff" class="clip" data-start="7" data-duration="3" data-track-index="1">
+        <div class="signoff-name">HW<span class="accent">✦</span></div>
+        <div class="signoff-meta">万物化我 · 2026</div>
+      </div>
+
+      <!-- 底部参数行(全程显示) -->
+      <div class="param-bar" id="param-bar">
+        <span>LOCALIZATION / GUANGZHOU, GD</span>
+        <span>2026 · IDENTITY FILM</span>
+      </div>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // 场景1: 化我从下淡入 + 微位移(克制动效,DESIGN.md §7)
+      tl.from("#scene-mark .mark-glyph", {
+        opacity: 0,
+        y: 30,
+        duration: 0.9,
+        ease: "power2.out"
+      }, 0.2);
+      tl.from("#scene-mark .mark-sub", {
+        opacity: 0,
+        y: 12,
+        duration: 0.6,
+        ease: "power2.out"
+      }, 0.8);
+      // 场景1 淡出 + 硬杀
+      tl.to("#scene-mark", {
+        opacity: 0,
+        duration: 0.4,
+        ease: "power2.in"
+      }, 3.1);
+      tl.set("#scene-mark", { opacity: 0 }, 3.5);
+
+      // 场景2: 哲学引言从模糊到清晰(Bodoni Moda 衬线 moment)
+      tl.from("#scene-ethos", {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out"
+      }, 3.5);
+      tl.fromTo("#scene-ethos .ethos-quote",
+        { filter: "blur(12px)", opacity: 0 },
+        { filter: "blur(0px)", opacity: 1, duration: 1.2, ease: "power2.out" },
+        3.5
+      );
+      // 场景2 淡出 + 硬杀
+      tl.to("#scene-ethos", {
+        opacity: 0,
+        duration: 0.4,
+        ease: "power2.in"
+      }, 6.6);
+      tl.set("#scene-ethos", { opacity: 0 }, 7.0);
+
+      // 场景3: 落款缩放淡入(克制,不超 1.05)
+      tl.from("#scene-signoff", {
+        opacity: 0,
+        scale: 0.96,
+        duration: 0.7,
+        ease: "power2.out"
+      }, 7);
+      tl.from("#scene-signoff .signoff-meta", {
+        opacity: 0,
+        y: 10,
+        duration: 0.5,
+        ease: "power2.out"
+      }, 7.6);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
