@@ -1,0 +1,132 @@
+/* ─────────────────────────────────────────────────────────────────────────
+ * design-systems/huawo/tokens.css
+ *
+ * Structured token bindings for "Design System for huawo / 化我".
+ * Editorial Magazine × Parametric Engineering — 杂志装帧感的暖白纸底 +
+ * 暖金强调 + 深黑色块反差 + 工程参数化的编号系统。
+ *
+ * Key brand decisions encoded here:
+ *   - 暖白 #F5F4F0 as page canvas — 永远不用纯白做主背景
+ *   - 深近黑 #0E0E0E as 反差色块 surface (hero / dark cards) — 不用纯黑 #000
+ *   - 暖金 #C5A880 as 唯一品牌强调色 — 不超过画面 10%,是锚点不是装饰
+ *   - ✦ 符号只在签名/章节分隔/关键转折 — 不当装饰撒
+ *   - Syne (display) + Bodoni Moda (serif moments) + Plus Jakarta Sans (body) + JetBrains Mono (参数行)
+ *   - 默认 rounded-xl (12px),按钮 rounded-full — 禁止直角
+ *   - 禁止渐变、禁止第二种暖色、禁止大幅 transform 动画
+ *
+ * Color roles 注意:huawo 深色色块用得多(对比官方 claude 浅底为主),
+ * 因此 --surface 角色对调为深色,--bg 仍是暖白主背景。
+ * ─────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ─── Surface (3 levels, huawo 双底体系) ────────────────────────
+   * 暖白 bg(默认 light 底) → 深 surface(dark 反差色块) → 次 surface-warm。
+   * 设计 §5 双底切换规则:每 2-3 页 light 之后插一个 dark 做节奏锚点。 */
+  --bg: #F5F4F0;             /* 暖白纸感 — 默认主背景,不用纯白 */
+  --surface: #0E0E0E;        /* 深近黑 — 反差色块背景(hero/dark cards),不用 #000 */
+  --surface-warm: #161616;   /* 次级深色 — 反差色块层次 */
+
+  /* ─── Foreground (4 levels) ───────────────────────────────────── */
+  --fg: #0E0E0E;             /* 主文字(暖白底上) */
+  --fg-2: #111111;           /* 次级深色文字 — 网站实测补全 */
+  --muted: #7A7A77;          /* 暖灰副文字(坐标/状态行) */
+  --meta: #7A7A77;           /* 参数化信息用同色 */
+
+  /* ─── Border ──────────────────────────────────────────────────── */
+  --border: #0E0E0E;         /* 深近黑反差分隔 */
+  --border-soft: #161616;    /* 次级深色边框 */
+
+  /* ─── Accent (单一暖金锚点) ─────────────────────────────────────
+   * 暖金是 huawo 唯一的品牌强调色。不超过画面 10%,否则失去锚点作用。 */
+  --accent: #C5A880;         /* 暖金/沙金 — ✦/CTA/关键数字/链接 hover */
+  --accent-on: #F5F4F0;      /* 暖金做底时的前景文字色 */
+  --accent-hover: color-mix(in oklab, #C5A880, white 8%);
+  --accent-active: color-mix(in oklab, #C5A880, black 14%);
+  --accent-glow: rgba(197, 168, 128, 0.2);  /* 盟友卡 hover 光晕 */
+
+  /* ─── 反差色块上的文字 ───────────────────────────────────────── */
+  --on-dark: #F5F4F0;        /* 反差色块上的暖白文字 */
+  --white-strict: #FFFFFF;   /* 仅高对比场景,不做主背景 */
+
+  /* ─── 辅色 ────────────────────────────────────────────────────── */
+  --warm-blush: #EAD5C3;     /* 浅杏色 — 柔化背景/次级 surface */
+
+  /* ─── 语义色(仅状态) ─────────────────────────────────────────── */
+  --success: #16A34A;
+  --warn: #D97706;
+  --danger: #DC2626;
+
+  /* ─── Typography (固定档位) ───────────────────────────────────── */
+  --font-display: "Syne", sans-serif;             /* 大标题/品牌名 700-800 */
+  --font-serif: "Bodoni Moda", Georgia, serif;    /* 装饰性引言 moments,禁泛用 */
+  --font-body: "Plus Jakarta Sans", sans-serif;   /* 主文字/正文 300-700 */
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;  /* 参数行/№编号 */
+
+  /* 正文档位(line-height 1.65-1.75) */
+  --text-xs: 12px;          /* 参数行 mono 下限 */
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  /* 标题档位(line-height 0.92-0.95, letter-spacing -0.02~-0.03em) */
+  --text-2xl: 40px;
+  --text-3xl: 56px;
+  --text-4xl: 80px;
+  --text-5xl: 112px;
+  /* 数字超大字 moment(Bodoni Moda 900) */
+  --text-hero-serif: 96px;
+  --text-mega-serif: 128px;
+
+  --leading-body: 1.7;
+  --leading-tight: 0.93;
+  --tracking-display: -0.025em;
+  --tracking-mono: 0.09em;
+
+  /* ─── Spacing (4 倍数基准) ────────────────────────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ─── Section padding ─────────────────────────────────────────── */
+  --section-y-desktop: 64px;
+  --section-y-tablet: 32px;
+  --section-y-phone: 32px;
+
+  /* ─── Radius (禁止直角) ──────────────────────────────────────── */
+  --radius-sm: 8px;
+  --radius-md: 12px;        /* 默认 rounded-xl */
+  --radius-lg: 16px;
+  --radius-pill: 9999px;    /* 按钮 rounded-full 胶囊 */
+
+  /* ─── Shadow (克制原则,仅 hover 光晕) ────────────────────────── */
+  --elev-flat: none;
+  --elev-ring: 0 0 30px rgba(197, 168, 128, 0.2);   /* 盟友卡 hover 暖金光晕 */
+  --elev-raised: 0 0 30px rgba(197, 168, 128, 0.2);
+  --focus-ring: 0 0 0 2px rgba(197, 168, 128, 0.4);
+
+  /* ─── Motion (克制,禁大幅 transform) ────────────────────────── */
+  --motion-fast: 200ms;     /* ✦ hover */
+  --motion-base: 400ms;     /* duration-300~500 中值,章节进入 */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ─── Container ───────────────────────────────────────────────── */
+  --container-max: 1200px;
+  --container-gutter-desktop: 120px;
+  --container-gutter-tablet: 24px;
+  --container-gutter-phone: 24px;
+}
+
+/* ─── 暗底作用域:dark slide 反转 ─────────────────────────────────
+ * huawo §5 双底切换:dark slide 用深黑底 + 暖白字 + 暖金强调饱和度 +10% */
+.slide--dark {
+  --bg: #0E0E0E;
+  --fg: #F5F4F0;
+  --surface: #161616;
+  --muted: #b0aea5;
+  --accent: #C5A880;        /* dark 页暖金 saturate +10%(视觉补偿) */
+}

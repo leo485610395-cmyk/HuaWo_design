@@ -1,0 +1,622 @@
+{
+  "schemaVersion": 1,
+  "format": "od-design-tokens/v1",
+  "contract": "TOKEN_SCHEMA",
+  "generatedAt": "2026-06-30T00:00:00.000Z",
+  "source": {
+    "designMd": "DESIGN.md",
+    "designTokens": "design-tokens.json",
+    "tokensCss": "tokens.css",
+    "tokenContractReport": "source/token-contract.report.json"
+  },
+  "summary": {
+    "totalTokens": 56,
+    "declaredTokens": 56,
+    "sourceBackedTokens": 56,
+    "sourceBackedA1": 26,
+    "fallbackTokens": 26,
+    "aliasTokens": 0,
+    "layerCounts": {
+      "A1-identity": 8,
+      "B-slot": 4,
+      "A2": 26,
+      "A1-structure": 18
+    },
+    "score": 100,
+    "grade": "excellent",
+    "recommendRebuild": false
+  },
+  "designIntent": "Editorial Magazine × Parametric Engineering — 杂志装帧感的暖白纸底 + 暖金强调 + 深黑色块反差 + 工程参数化的编号系统。大学生 AI 产品经理的个人品牌视觉系统。",
+  "brandSignatures": [
+    "✦ 符号(品牌签名,不滥用)",
+    "№ 编号 + 双语标签(№ 26 / WAVES PILOT / 浪尖领航官)",
+    "暖白 #F5F4F0 + 暖金 #C5A880 + 深黑 #0E0E0E 三色锁定"
+  ],
+  "tokens": [
+    {
+      "name": "--bg",
+      "value": "#F5F4F0",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "DESIGN.md §2 Primary — 暖白纸感主背景,网站实测 17 次。",
+      "sources": ["DESIGN.md#L16"]
+    },
+    {
+      "name": "--surface",
+      "value": "#0E0E0E",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "DESIGN.md §2 Secondary — 深近黑反差色块背景(hero/深色卡片),网站实测 17 次。huawo 深色色块用得多,surface 角色对调为深色。",
+      "sources": ["DESIGN.md#L17"]
+    },
+    {
+      "name": "--surface-warm",
+      "value": "#161616",
+      "type": "color",
+      "layer": "B-slot",
+      "confidence": "high",
+      "reason": "DESIGN.md §2 Tertiary — 次级深色,反差色块层次,网站实测 4 次。",
+      "sources": ["DESIGN.md#L19"]
+    },
+    {
+      "name": "--fg",
+      "value": "#0E0E0E",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "DESIGN.md §2 Text — 深近黑主文字,与 --bg 暖白配对。",
+      "sources": ["DESIGN.md#L20"]
+    },
+    {
+      "name": "--fg-2",
+      "value": "#111111",
+      "type": "color",
+      "layer": "B-slot",
+      "confidence": "high",
+      "reason": "网站实测出现 3 次(#111111 + #111),DESIGN.md §2 未收录的次级深色文字,本次补全。",
+      "sources": ["website-huawo.netlify.app"]
+    },
+    {
+      "name": "--muted",
+      "value": "#7A7A77",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "DESIGN.md §2 Mute — 暖灰副文字(坐标/状态行/版权),网站实测 2 次。",
+      "sources": ["DESIGN.md#L22"]
+    },
+    {
+      "name": "--meta",
+      "value": "#7A7A77",
+      "type": "color",
+      "layer": "B-slot",
+      "confidence": "high",
+      "reason": "DESIGN.md §2 Mute 复用 — 坐标/版权等参数化信息用同色。",
+      "sources": ["DESIGN.md#L22"]
+    },
+    {
+      "name": "--border",
+      "value": "#0E0E0E",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "medium",
+      "reason": "DESIGN.md 未单列 border 色,huawo 用深近黑做反差分隔;以 --fg 为基准。",
+      "sources": ["DESIGN.md#L20"]
+    },
+    {
+      "name": "--border-soft",
+      "value": "#161616",
+      "type": "color",
+      "layer": "B-slot",
+      "confidence": "medium",
+      "reason": "次级深色边框,沿用 --surface-warm。",
+      "sources": ["DESIGN.md#L19"]
+    },
+    {
+      "name": "--accent",
+      "value": "#C5A880",
+      "type": "color",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "DESIGN.md §2 Accent — 暖金/沙金品牌强调色,✦符号/CTA/关键数字,网站实测 22 次(最高频)。",
+      "sources": ["DESIGN.md#L18"]
+    },
+    {
+      "name": "--accent-on",
+      "value": "#F5F4F0",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "暖金做背景时的前景文字色,用 --bg 暖白。",
+      "sources": ["DESIGN.md#L16"]
+    },
+    {
+      "name": "--accent-hover",
+      "value": "color-mix(in oklab, #C5A880, white 8%)",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §2/§7 — hover 用暖金光晕 rgba(197,168,128,0.2);hover 提亮用 white mix。",
+      "sources": ["DESIGN.md#L29"]
+    },
+    {
+      "name": "--accent-active",
+      "value": "color-mix(in oklab, #C5A880, black 14%)",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "medium",
+      "reason": "暖金按下态压暗,沿用官方 accent-active 模式。",
+      "sources": ["DESIGN.md#L18"]
+    },
+    {
+      "name": "--accent-glow",
+      "value": "rgba(197,168,128,0.2)",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §2/§6 — 暖金光晕,盟友卡 hover 阴影 shadow-[0_0_30px_rgba(197,168,128,0.2)]。",
+      "sources": ["DESIGN.md#L29"]
+    },
+    {
+      "name": "--warm-blush",
+      "value": "#EAD5C3",
+      "type": "color",
+      "layer": "B-slot",
+      "confidence": "high",
+      "reason": "DESIGN.md §2 Warm-blush — 浅杏色,柔化背景或次级 surface,网站实测 1 次。",
+      "sources": ["DESIGN.md#L23"]
+    },
+    {
+      "name": "--on-dark",
+      "value": "#F5F4F0",
+      "type": "color",
+      "layer": "B-slot",
+      "confidence": "high",
+      "reason": "DESIGN.md §2 Text-on-dark — 反差色块上的暖白文字。",
+      "sources": ["DESIGN.md#L21"]
+    },
+    {
+      "name": "--white-strict",
+      "value": "#FFFFFF",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §2 White — 纯白,仅用于反差色块上的高对比文字。",
+      "sources": ["DESIGN.md#L24"]
+    },
+    {
+      "name": "--success",
+      "value": "#16A34A",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §2 — 仅状态用。",
+      "sources": ["DESIGN.md#L25"]
+    },
+    {
+      "name": "--warn",
+      "value": "#D97706",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §2 Warning — 仅状态用。",
+      "sources": ["DESIGN.md#L25"]
+    },
+    {
+      "name": "--danger",
+      "value": "#DC2626",
+      "type": "color",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §2 Danger — 仅状态用。",
+      "sources": ["DESIGN.md#L25"]
+    },
+    {
+      "name": "--font-display",
+      "value": "Syne",
+      "type": "fontFamily",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 Families — display = Syne 700-800,大标题/品牌名(HW/化我✦)/英文大写标签。",
+      "sources": ["DESIGN.md#L39"]
+    },
+    {
+      "name": "--font-serif",
+      "value": "Bodoni Moda",
+      "type": "fontFamily",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 Families — serif = Bodoni Moda 400-900 含斜体,装饰性引言/衬线大字 moments,禁止泛用。",
+      "sources": ["DESIGN.md#L40"]
+    },
+    {
+      "name": "--font-body",
+      "value": "Plus Jakarta Sans",
+      "type": "fontFamily",
+      "layer": "A1-identity",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 Families — primary = Plus Jakarta Sans 300-700,主文字/双语标签/正文/CTA。",
+      "sources": ["DESIGN.md#L41"]
+    },
+    {
+      "name": "--font-mono",
+      "value": "JetBrains Mono",
+      "type": "fontFamily",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 Families — mono = JetBrains Mono 或 ui-monospace,坐标/状态行/参数行/№编号/版权。禁止用于正文。",
+      "sources": ["DESIGN.md#L42"]
+    },
+    {
+      "name": "--text-xs",
+      "value": "12px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 参数行 mono 12-14px 下限。",
+      "sources": ["DESIGN.md#L37"]
+    },
+    {
+      "name": "--text-sm",
+      "value": "14px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 正文 sm = 14px(line-height 1.65-1.75)。",
+      "sources": ["DESIGN.md#L34"]
+    },
+    {
+      "name": "--text-base",
+      "value": "16px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 正文 base = 16px。",
+      "sources": ["DESIGN.md#L34"]
+    },
+    {
+      "name": "--text-lg",
+      "value": "20px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 正文 lg = 20px。",
+      "sources": ["DESIGN.md#L34"]
+    },
+    {
+      "name": "--text-xl",
+      "value": "24px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 正文 xl = 24px。",
+      "sources": ["DESIGN.md#L34"]
+    },
+    {
+      "name": "--text-2xl",
+      "value": "40px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 标题 sm = 40px(line-height 0.92-0.95)。",
+      "sources": ["DESIGN.md#L35"]
+    },
+    {
+      "name": "--text-3xl",
+      "value": "56px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 标题 base = 56px。",
+      "sources": ["DESIGN.md#L35"]
+    },
+    {
+      "name": "--text-4xl",
+      "value": "80px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 标题 lg = 80px。",
+      "sources": ["DESIGN.md#L35"]
+    },
+    {
+      "name": "--text-5xl",
+      "value": "112px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 标题 xl = 112px。",
+      "sources": ["DESIGN.md#L35"]
+    },
+    {
+      "name": "--text-hero-serif",
+      "value": "96px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 数字超大字 moment 96px(Bodoni Moda 900,融资额/哲学引言)。",
+      "sources": ["DESIGN.md#L36"]
+    },
+    {
+      "name": "--text-mega-serif",
+      "value": "128px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 数字超大字 moment 128px(Bodoni Moda 900 上限)。",
+      "sources": ["DESIGN.md#L36"]
+    },
+    {
+      "name": "--leading-body",
+      "value": "1.7",
+      "type": "number",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 正文 line-height 1.65-1.75 取中。",
+      "sources": ["DESIGN.md#L34"]
+    },
+    {
+      "name": "--leading-tight",
+      "value": "0.93",
+      "type": "number",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 标题 line-height 0.92-0.95 取中。",
+      "sources": ["DESIGN.md#L35"]
+    },
+    {
+      "name": "--tracking-display",
+      "value": "-0.025em",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 标题 letter-spacing -0.02 ~ -0.03em 取中。",
+      "sources": ["DESIGN.md#L35"]
+    },
+    {
+      "name": "--tracking-mono",
+      "value": "0.09em",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §3 — 参数行 mono letter-spacing 0.06-0.12em 取中。",
+      "sources": ["DESIGN.md#L37"]
+    },
+    {
+      "name": "--space-1",
+      "value": "4px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §4 — Spacing scale 4 倍数基准。",
+      "sources": ["DESIGN.md#L52"]
+    },
+    {
+      "name": "--space-2",
+      "value": "8px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §4 Spacing scale。",
+      "sources": ["DESIGN.md#L52"]
+    },
+    {
+      "name": "--space-3",
+      "value": "12px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §4 Spacing scale。",
+      "sources": ["DESIGN.md#L52"]
+    },
+    {
+      "name": "--space-4",
+      "value": "16px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §4 Spacing scale。",
+      "sources": ["DESIGN.md#L52"]
+    },
+    {
+      "name": "--space-6",
+      "value": "24px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §4 Spacing scale + 移动 section padding。",
+      "sources": ["DESIGN.md#L52,L54"]
+    },
+    {
+      "name": "--space-8",
+      "value": "32px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §4 移动 section padding。",
+      "sources": ["DESIGN.md#L54"]
+    },
+    {
+      "name": "--space-12",
+      "value": "48px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "medium",
+      "reason": "DESIGN.md §4 间距档位补全(4 倍数序列)。",
+      "sources": ["DESIGN.md#L52"]
+    },
+    {
+      "name": "--space-16",
+      "value": "64px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §4 PC section padding + spacing scale。",
+      "sources": ["DESIGN.md#L52,L54"]
+    },
+    {
+      "name": "--section-y-desktop",
+      "value": "64px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §4 Section padding PC。",
+      "sources": ["DESIGN.md#L54"]
+    },
+    {
+      "name": "--section-y-tablet",
+      "value": "32px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "medium",
+      "reason": "DESIGN.md §4 移动 32px 推及 tablet。",
+      "sources": ["DESIGN.md#L54"]
+    },
+    {
+      "name": "--section-y-phone",
+      "value": "32px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §4 Section padding 移动。",
+      "sources": ["DESIGN.md#L54"]
+    },
+    {
+      "name": "--radius-sm",
+      "value": "8px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "medium",
+      "reason": "DESIGN.md §6 圆角档位补全(默认 rounded-xl 12px 之下)。",
+      "sources": ["DESIGN.md#L88"]
+    },
+    {
+      "name": "--radius-md",
+      "value": "12px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §6 — 默认 rounded-xl 12px(卡片/Toast),禁止直角。",
+      "sources": ["DESIGN.md#L88"]
+    },
+    {
+      "name": "--radius-lg",
+      "value": "16px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "medium",
+      "reason": "DESIGN.md §6 大卡圆角档位。",
+      "sources": ["DESIGN.md#L88"]
+    },
+    {
+      "name": "--radius-pill",
+      "value": "9999px",
+      "type": "dimension",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §6 — 按钮 rounded-full 胶囊。",
+      "sources": ["DESIGN.md#L84"]
+    },
+    {
+      "name": "--elev-flat",
+      "value": "none",
+      "type": "shadow",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §7 — 默认无阴影,克制原则。",
+      "sources": ["DESIGN.md#L97"]
+    },
+    {
+      "name": "--elev-ring",
+      "value": "0 0 30px rgba(197,168,128,0.2)",
+      "type": "shadow",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §6 — 盟友卡 hover 暖金光晕阴影。",
+      "sources": ["DESIGN.md#L83"]
+    },
+    {
+      "name": "--elev-raised",
+      "value": "0 0 30px rgba(197,168,128,0.2)",
+      "type": "shadow",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §6/§7 — hover 光晕为唯一允许的阴影。",
+      "sources": ["DESIGN.md#L83"]
+    },
+    {
+      "name": "--focus-ring",
+      "value": "0 0 0 2px rgba(197,168,128,0.4)",
+      "type": "shadow",
+      "layer": "A2",
+      "confidence": "medium",
+      "reason": "暖金 focus ring(无障碍),沿用 accent-glow 配色。",
+      "sources": ["DESIGN.md#L29"]
+    },
+    {
+      "name": "--motion-fast",
+      "value": "200ms",
+      "type": "duration",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §7 — ✦ hover 200-300ms 下限。",
+      "sources": ["DESIGN.md#L93"]
+    },
+    {
+      "name": "--motion-base",
+      "value": "400ms",
+      "type": "duration",
+      "layer": "A2",
+      "confidence": "high",
+      "reason": "DESIGN.md §7 — duration-300 到 duration-500 取中,章节进入视口 300-500ms 取中。",
+      "sources": ["DESIGN.md#L91,L94"]
+    },
+    {
+      "name": "--ease-standard",
+      "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "type": "cubicBezier",
+      "layer": "A2",
+      "confidence": "medium",
+      "reason": "DESIGN.md §7 未指定曲线,沿用通用 ease 标准曲线。",
+      "sources": ["DESIGN.md#L91"]
+    },
+    {
+      "name": "--container-max",
+      "value": "1200px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §4 — Container width PC。",
+      "sources": ["DESIGN.md#L53"]
+    },
+    {
+      "name": "--container-gutter-desktop",
+      "value": "120px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §4 Swiss Grid — PC 左右 padding 120px。",
+      "sources": ["DESIGN.md#L55"]
+    },
+    {
+      "name": "--container-gutter-tablet",
+      "value": "24px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §4 Swiss Grid — 移动左右 padding 24px,推及 tablet。",
+      "sources": ["DESIGN.md#L55"]
+    },
+    {
+      "name": "--container-gutter-phone",
+      "value": "24px",
+      "type": "dimension",
+      "layer": "A1-structure",
+      "confidence": "high",
+      "reason": "DESIGN.md §4 Swiss Grid — 移动左右 padding 24px。",
+      "sources": ["DESIGN.md#L55"]
+    }
+  ]
+}
